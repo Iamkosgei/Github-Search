@@ -4,6 +4,9 @@ import { environment } from '../../environments/environment'
 import { User } from '../user'
 import { Repo } from '../repo';
 
+import {Response, Http} from '@angular/http';
+
+
 
 
 @Injectable({
@@ -12,14 +15,16 @@ import { Repo } from '../repo';
 export class GithubRequestService {
 
   user: User;
-  repo: Repo;
+  repos: Repo[];
+
+  reposArray:any;
 
   public userName: string = "daneden"
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private http1:Http) {
     this.user = new User("", "", 0, 0, "", "", "", 0, "", "", "");
-    this.repo = new Repo("", "", "", 0, 0);
+  
   }
 
   profileRequest(newName) {
@@ -65,31 +70,40 @@ export class GithubRequestService {
     return promise
   }
 
-  reposRequest() {
-    interface ApiResponse {
-      name: string;
-      description: string;
-      url: string;
-      watchers: number;
-      forks: number;
-    }
-    let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>("https://api.github.com/users/daneden/repos").toPromise().then(response => {
-
-        this.repo.name = response.name
-        this.repo.description = response.description
-        this.repo.url = response.url
-        this.repo.forks = response.forks
-        this.repo.watchers = response.watchers
-
-        resolve()
-
-      },
-        error => {
-          reject(error)
-        }
-      )
-    })
-    return promise
+  searchRepos(name){
+    let reposUrl = `https://api.github.com/users/${name}/repos`
+       this.http1.get(reposUrl).subscribe((res3:Response) =>{
+        this.reposArray = res3.json().items;
+        console.log(res3.json());
+      })
+  
   }
+
+  // reposRequest() {
+  //   interface ApiResponse {
+  //     name: string;
+  //     description: string;
+  //     url: string;
+  //     watchers: number;
+  //     forks: number;
+  //   }
+  //   let promise = new Promise((resolve, reject) => {
+  //     this.http.get<ApiResponse>("https://api.github.com/users/daneden/repos").toPromise().then(response => {
+
+  //       this.repo.name = response.name
+  //       this.repo.description = response.description
+  //       this.repo.url = response.url
+  //       this.repo.forks = response.forks
+  //       this.repo.watchers = response.watchers
+
+  //       resolve()
+
+  //     },
+  //       error => {
+  //         reject(error)
+  //       }
+  //     )
+  //   })
+  //   return promise
+  // }
 }

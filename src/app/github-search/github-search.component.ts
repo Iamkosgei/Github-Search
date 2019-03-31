@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubRequestService } from '../githubHttp/github-request.service';
 import { User } from '../user';
+import {Response, Http} from '@angular/http';
+
+
+
 
 @Component({
   selector: 'app-github-search',
@@ -10,13 +14,16 @@ import { User } from '../user';
 export class GithubSearchComponent implements OnInit {
   user:User;
   name:string = "Iamkosgei";
+  reposArray:any;
 
-  constructor(private githubRequestService:GithubRequestService) { }
+  constructor(private githubRequestService:GithubRequestService,private http:Http) { }
 
   ngOnInit() {
     
     this.githubRequestService.profileRequest("Iamkosgei")
     this.user = this.githubRequestService.user
+
+    this.githubRequestService.searchRepos("Iamkosgei")
     
   }
   onSubmit(name)
@@ -25,9 +32,9 @@ export class GithubSearchComponent implements OnInit {
     {
       this.githubRequestService.profileRequest(name)
       this.user = this.githubRequestService.user
-    }
 
+      this.githubRequestService.searchRepos(name)
+    }  
     
-  
   }
 }

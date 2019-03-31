@@ -7,76 +7,76 @@
 
 <div class="content">
 
-    <div class="profile container d-flex justify-content-center align-self-center">
-        <div class="card flex-row flex-wrap">
-            <div class="card-header border-0">
-                <img class="prof-image" src= "{{ user.avatar_url }}" alt="">
-                <h5>{{ user.name }}</h5>
-                <p>Bio: {{user.bio}}</p>
-                <ul class="list-group">
-                        <p>
-                          Followers:
-                          <span class="badge badge-primary badge-pill">{{ user.followers }}</span>
-                        </p>
-      
-                        <p>
-                          Following:
-                          <span class="badge badge-primary badge-pill">{{ user.following }}</span>
-                        </p>
-                      </ul>
-            </div>
-            <div class="card-block">
-                            <p> <i class="fas-prof fas fa-sign-in-alt"></i> Login: {{ user.login }}</p>
-                            <hr>
-                            <p> <i class="fas-prof fas fa-location-arrow"></i>Location: {{ user.location }}</p>
-                            <hr>
-                            <p><i class="fas-prof fas fa-envelope-open"></i> Email: {{ user.email }}</p>
-                            <hr>
-                            <p> <i class="fas-prof fas fa-code-branch"></i>Public Repos: {{ user.public_repos }} </p>
-                            <hr>
-                            <p> <i class="fas-prof fas fa-building"></i>Company: {{ user.company }} </p>
-                            <hr>
-                            <i class="fas-prof fab fa-html5"></i>
-                            Blog:<a href="{{ user.blog }}" target="_blank"> {{ user.blog }} </a>
-                            <hr>
-            </div>
-            <div class="w-100"></div>
-        </div>
+  <div class="profile container d-flex justify-content-center align-self-center">
+    <div class="card flex-row flex-wrap">
+      <div class="card-header border-0">
+        <img class="prof-image" src="{{ user.avatar_url }}" alt="">
+        <h5>{{ user.name }}</h5>
+        <p>Bio: {{user.bio}}</p>
+        <ul class="list-group">
+          <p>
+            Followers:
+            <span class="badge badge-primary badge-pill">{{ user.followers }}</span>
+          </p>
+
+          <p>
+            Following:
+            <span class="badge badge-primary badge-pill">{{ user.following }}</span>
+          </p>
+        </ul>
       </div>
+      <div class="card-block">
+        <p> <i class="fas-prof fas fa-sign-in-alt"></i> Login: {{ user.login }}</p>
+        <hr>
+        <p> <i class="fas-prof fas fa-location-arrow"></i>Location: {{ user.location }}</p>
+        <hr>
+        <p><i class="fas-prof fas fa-envelope-open"></i> Email: {{ user.email }}</p>
+        <hr>
+        <p> <i class="fas-prof fas fa-code-branch"></i>Public Repos: {{ user.public_repos }} </p>
+        <hr>
+        <p> <i class="fas-prof fas fa-building"></i>Company: {{ user.company }} </p>
+        <hr>
+        <i class="fas-prof fab fa-html5"></i>
+        Blog:<a href="{{ user.blog }}" target="_blank"> {{ user.blog }} </a>
+        <hr>
+      </div>
+      <div class="w-100"></div>
+    </div>
+  </div>
 
 
-      <!-- Page content -->
-<div class="main container">
+  <!-- Page content -->
+  <div class="main container">
     <div class="main-content">
-  
-  
-  
+
+
+
       <div class="card">
         <div class="card-body">
           <h5 class="card-title"> Simple Landing Page </h5>
           <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sed.</p>
           <div class="d-flex justify-content-around align-items-center">
-          <a href="www.google.com" target=".blank"> URL </a>
-          <span class="badge badge-success"> Watchers: 10</span>
-          <span class="badge badge-success">Forks: 12</span>
-        </div>
-  
-        </div>
-      </div>
-  
-      <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"> Simple Landing Page </h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sed.</p>
-            <div class="d-flex justify-content-around align-items-center">
             <a href="www.google.com" target=".blank"> URL </a>
             <span class="badge badge-success"> Watchers: 10</span>
             <span class="badge badge-success">Forks: 12</span>
           </div>
-    
-          </div>
+
         </div>
-  
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"> Simple Landing Page </h5>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sed.</p>
+          <div class="d-flex justify-content-around align-items-center">
+            <a href="www.google.com" target=".blank"> URL </a>
+            <span class="badge badge-success"> Watchers: 10</span>
+            <span class="badge badge-success">Forks: 12</span>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </div>
 

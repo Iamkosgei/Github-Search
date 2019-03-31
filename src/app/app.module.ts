@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { GithubSearchComponent } from './github-search/github-search.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import {HttpClientModule} from '@angular/common/http'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,10 +11,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 5. Typescript
 6. Npm
 
-## Screen Shots
+## Screen Shot
 
-![Screen Shot](/src/assets/img/ss1.png)
-![Screen Shot](/src/assets/img/ss2.png)
+![Screen Shot](/src/assets/img/ss3.png)
 
 ## How to run it
 

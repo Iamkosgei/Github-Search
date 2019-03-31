@@ -10,7 +10,7 @@
 
 <div class="content">
 
-  <div class="profile container d-flex justify-content-center align-self-center">
+  <div class="profile container d-flex justify-content-center">
     <div class="card flex-row flex-wrap">
       <div class="card-header border-0">
         <img class="prof-image" src="{{ user.avatar_url }}" alt="">
@@ -49,11 +49,11 @@
 
 
   <!-- Page content -->
-    <div class="main-content">
-      <div class="card">
+    <div  class="main-content">
+      <div *ngFor ="let repo of reposArray"  class="card">
         <div class="card-body">
-          <h5 class="card-title"> Simple Landing Page </h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sed.</p>
+          <h5 class="card-title"> {{repo.name}} </h5>
+          <p class="card-text">{{ repo.description }}</p>
           <div class="d-flex justify-content-around align-items-center">
             <a href="www.google.com" target=".blank"> URL </a>
             <span class="badge badge-success"> Watchers: 10</span>
@@ -62,20 +62,6 @@
 
         </div>
       </div>
-
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"> Simple Landing Page </h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, sed.</p>
-          <div class="d-flex justify-content-around align-items-center">
-            <a href="www.google.com" target=".blank"> URL </a>
-            <span class="badge badge-success"> Watchers: 10</span>
-            <span class="badge badge-success">Forks: 12</span>
-          </div>
-
-        </div>
-      </div>
-
     </div>
   
 

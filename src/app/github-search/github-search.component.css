@@ -46,7 +46,8 @@ a {
 .profile
 {
     margin-top: 5vh;
-    flex: 1
+    flex: 1;
+    height: 30%
 } 
 
 .prof-image
@@ -92,5 +93,18 @@ a {
 .title 
 {
   font-size: 2rem
+}
+.content
+{
+flex-direction: column
+}
+.card-header
+{
+    width: 100%;
+   
+}
+.card-block
+{
+    width: 100%
 }
 }

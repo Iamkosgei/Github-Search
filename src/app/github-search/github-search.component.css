@@ -34,10 +34,19 @@ a {
     display: flex;
 }
 
+.main-content
+{
+    flex: 1;
+    margin-top: 5vh;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
 /* profile */
 .profile
 {
-    margin-top: 5vh
+    margin-top: 5vh;
+    flex: 1
 } 
 
 .prof-image

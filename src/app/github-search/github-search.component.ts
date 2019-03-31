@@ -23,6 +23,7 @@ export class GithubSearchComponent implements OnInit {
     this.githubRequestService.profileRequest("Iamkosgei")
     this.user = this.githubRequestService.user
 
+    this.reposArray = this.githubRequestService.searchRepos("Iamkosgei")
     this.githubRequestService.searchRepos("Iamkosgei")
     
   }
@@ -33,7 +34,10 @@ export class GithubSearchComponent implements OnInit {
       this.githubRequestService.profileRequest(name)
       this.user = this.githubRequestService.user
 
-      this.githubRequestService.searchRepos(name)
+      this.reposArray =this.githubRequestService.searchRepos(name);
+
+      // console.log(this.reposArray)
+      
     }  
     
   }

@@ -107,4 +107,9 @@ flex-direction: column
 {
     width: 100%
 }
+.profile
+{
+    margin-top: 0;
+
+} 
 }

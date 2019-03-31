@@ -9,12 +9,25 @@ import { User } from '../user';
 })
 export class GithubSearchComponent implements OnInit {
   user:User;
+  name:string = "Iamkosgei";
 
   constructor(private githubRequestService:GithubRequestService) { }
 
   ngOnInit() {
-    this.githubRequestService.profileRequest()
+    
+    this.githubRequestService.profileRequest("Iamkosgei")
     this.user = this.githubRequestService.user
+    
   }
+  onSubmit(name)
+  {
+    if(name.trim().length != 0)
+    {
+      this.githubRequestService.profileRequest(name)
+      this.user = this.githubRequestService.user
+    }
 
+    
+  
+  }
 }

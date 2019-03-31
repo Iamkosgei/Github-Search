@@ -5,6 +5,7 @@ import { User } from '../user'
 import { Repo } from '../repo';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,15 +14,15 @@ export class GithubRequestService {
   user: User;
   repo: Repo;
 
-  public userName:string = "daneden"
-  
+  public userName: string = "daneden"
 
-  constructor(private http:HttpClient) {
-    this.user = new User("", "", 0, 0, "", "", "",0,"","","");
-    this.repo = new Repo("","","",0,0);
+
+  constructor(private http: HttpClient) {
+    this.user = new User("", "", 0, 0, "", "", "", 0, "", "", "");
+    this.repo = new Repo("", "", "", 0, 0);
   }
 
-  profileRequest() {
+  profileRequest(newName) {
 
     interface ApiResponse {
       name: string;
@@ -32,13 +33,13 @@ export class GithubRequestService {
       location: string;
       email: string;
       public_repos: number;
-      avatar_url:string;
-      blog:string;
-      company:string;
+      avatar_url: string;
+      blog: string;
+      company: string;
 
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(`https://api.github.com/users/${this.userName}?access_token=${environment.apiKey}`).toPromise().then(response => {
+      this.http.get<ApiResponse>(`https://api.github.com/users/${newName}?access_token=${environment.apiKey}`).toPromise().then(response => {
 
         this.user.name = response.name
         this.user.bio = response.bio
@@ -55,7 +56,8 @@ export class GithubRequestService {
         resolve()
       },
         error => {
-          reject(error)
+          this.profileRequest("Iamkosgei")
+          // reject(error)
         }
       )
     })
@@ -63,8 +65,7 @@ export class GithubRequestService {
     return promise
   }
 
-  reposRequest()
-  {
+  reposRequest() {
     interface ApiResponse {
       name: string;
       description: string;
@@ -76,20 +77,19 @@ export class GithubRequestService {
       this.http.get<ApiResponse>("https://api.github.com/users/daneden/repos").toPromise().then(response => {
 
         this.repo.name = response.name
-        this.repo.description= response.description
+        this.repo.description = response.description
         this.repo.url = response.url
         this.repo.forks = response.forks
-        this.repo.watchers= response.watchers
+        this.repo.watchers = response.watchers
 
         resolve()
-        
+
       },
         error => {
           reject(error)
         }
       )
     })
-    // console.log(promise.then(data => console.log(data)))
     return promise
   }
 }

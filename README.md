@@ -13,12 +13,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Screen Shots
 
-![Screen Shot](../../assets/img/bg.jpg)
-![Screen Shot](../../assets/img/bg.jpg)
+![Screen Shot](/src/assets/img/ss1.png)
+![Screen Shot](/src/assets/img/ss2.png)
 
 ## How to run it
 
-1. [Live Version](www.google.com)
+1. [Live Version](https://iamkosgei.github.io/Github-Search/)
 2. Clone the repo then follow the following instruction
 
 ## Development server

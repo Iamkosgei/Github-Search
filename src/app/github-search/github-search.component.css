@@ -29,6 +29,38 @@ a {
   font-size: 5rem
 }
 
+.content
+{
+    display: flex;
+}
+
+/* profile */
+.profile
+{
+    margin-top: 5vh
+} 
+
+.prof-image
+{
+    width: 10rem;
+    border-radius: 50%
+}
+
+.card-header
+{
+    max-width: 40%;
+    text-align: center
+}
+.card-block
+{
+    padding: 2rem;
+    width: 60%
+}
+.fas-prof
+{
+    margin-right: 1rem;
+} 
+
 
 @media(max-width :786px)
 {

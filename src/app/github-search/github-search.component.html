@@ -50,12 +50,12 @@
 
   <!-- Page content -->
     <div  class="main-content">
-      <div *ngFor ="let repo of reposArray"  class="card">
+      <div *ngFor ="let repo of reposArray"  class="card repo-card">
         <div class="card-body">
           <h5 class="card-title"> Title:  {{repo.name}} </h5>
           <p class="card-text"> Description: {{ repo.description }}</p>
           <div class="d-flex justify-content-around align-items-center">
-            <a href="www.google.com" target=".blank"> URL </a>
+            <a href="{{ repo.html_url }}" target=".blank"> <button type="button" class="btn btn-outline-success btn-sm">Repo Url</button> </a>
             <span class="badge badge-success"> Watchers: {{repo.watchers_count}}</span>
             <span class="badge badge-success">Forks: {{repo.forks_count}}</span>
           </div>

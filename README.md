@@ -13,7 +13,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Screen Shot
 
-![Screen Shot](/src/assets/img/ss3.png)
+![Screen Shot](/src/assets/img/ss4.png)
 
 ## How to run it
 

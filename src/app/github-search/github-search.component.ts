@@ -14,7 +14,7 @@ import {Response, Http} from '@angular/http';
 export class GithubSearchComponent implements OnInit {
   user:User;
   name:string = "Iamkosgei";
-  reposArray:any;
+  reposArray;
 
   constructor(private githubRequestService:GithubRequestService,private http:Http) { }
 
@@ -22,10 +22,9 @@ export class GithubSearchComponent implements OnInit {
     
     this.githubRequestService.profileRequest("Iamkosgei")
     this.user = this.githubRequestService.user
-
-    this.reposArray = this.githubRequestService.searchRepos("Iamkosgei")
-    this.githubRequestService.searchRepos(this.name)
-    
+    this.githubRequestService.searchRepos("Iamkosgei").subscribe(result =>{
+      this.reposArray = result
+    })     
   }
   onSubmit(name)
   {
@@ -34,9 +33,10 @@ export class GithubSearchComponent implements OnInit {
       this.githubRequestService.profileRequest(name)
       this.user = this.githubRequestService.user
 
-      this.githubRequestService.searchRepos(name)
-      this.reposArray =this.githubRequestService.searchRepos(name);
-      
+
+      this.githubRequestService.searchRepos(name).subscribe(result =>{
+        this.reposArray = result
+      })      
     }  
     
   }

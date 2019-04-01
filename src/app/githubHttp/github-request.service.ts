@@ -71,11 +71,7 @@ export class GithubRequestService {
   }
 
   searchRepos(name){
-    let reposUrl = `https://api.github.com/users/${name}/repos?access_token=d0bf12319a2fef42eb8ae5f321fa859cfe7ed2b3`
-       this.http1.get(reposUrl).subscribe((res3:Response) =>{
-        this.reposArray = res3.json();
-        //console.log(this.reposArray);
-      })
-  return this.reposArray;
+   return this.http.get(`https://api.github.com/users/${name}/repos?access_token=d0bf12319a2fef42eb8ae5f321fa859cfe7ed2b3`);
   }
+
 }

@@ -17,7 +17,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## How to run it
 
-1. [Live Version](https://iamkosgei.github.io/Github-Search/)
+1. [Live Version](https://gitsearch01.netlify.app/)
 2. Clone the repo then follow the following instruction
 
 ## Development server
